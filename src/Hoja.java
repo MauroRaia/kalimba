@@ -3,13 +3,12 @@ public class Hoja {
 
 	Integer numeroDePag ;
 	Texto escrito;
+	Editor editor;
 	
-	
-public Hoja (Integer numeroPag, Texto parrafo){
+public Hoja (Integer numeroPag, Editor unEditor){
 	
 	this.numeroDePag = numeroPag;
-	this.escrito = parrafo;
-	
+	this.editor = unEditor;
  }
 public void imprimirTexto(){
 	
@@ -17,4 +16,9 @@ public void imprimirTexto(){
 	
 }
 
+public void agregarTexto(Texto unEscrito){
+
+    this.escrito = unEscrito;
+
+}
 }
