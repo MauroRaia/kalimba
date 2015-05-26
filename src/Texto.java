@@ -32,6 +32,11 @@ public void imprimirLineas(){
 public void agregarLinea(LineasTexto linea){
 	
 	this.lineasString.add(linea);
+}
+
+public Integer getNroLinea(LineasTexto linea){
+	
+	return this.lineasString.indexOf(linea);
 	
 }
 

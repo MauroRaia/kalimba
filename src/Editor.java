@@ -32,9 +32,15 @@ public void elegirHojaActiva(Hoja unaHoja){
 //Copiar,cortar y pegar, con el portapapeles
 
 
-public void seleccionarLineas(LineasTexto linea){
+public void seleccionarTodo(){
 	
-	this.hojaActiva.escrito.lineasSeleccionadas.add(linea);
+	this.hojaActiva.escrito.lineasSeleccionadas.addAll(hojaActiva.escrito.lineasString);
+	
+}
+
+public void seleccionarLineas(Integer num){
+	
+	this.hojaActiva.escrito.lineasSeleccionadas.add(hojaActiva.escrito.lineasString.get(num));
 	
 }
 
@@ -57,9 +63,18 @@ public void cortarContenido(){
 
 
 
-public void pegarContenido(Hoja hoja){
-	System.out.println(this.contenidoPortapapeles);
-	hoja.escrito.lineasString.addAll(this.contenidoPortapapeles);
+public void pegarContenido(Hoja hoja, Integer numeroLista){
+	
+	Integer x = numeroLista - 1;
+	
+	for (LineasTexto linea : contenidoPortapapeles){
+		
+		Integer c = x + 1;
+		hoja.escrito.lineasString.add(c, new LineasTexto(linea.contenido, linea.parrafo) );
+		
+	}
+	
+	//hoja.escrito.lineasString.addAll(this.contenidoPortapapeles);
 	
 }
 

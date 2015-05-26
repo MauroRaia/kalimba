@@ -2,19 +2,18 @@
 public class LineasTexto {
 
 	String contenido;
-	Integer numeroDeLinea;
 	Texto parrafo;
 	
 public void imprimir(){
 	
-	System.out.println(this.numeroDeLinea);
+	System.out.println(parrafo.lineasString.indexOf(this));
 	System.out.println(this.contenido);
 	
 }
-public LineasTexto (String contenido, Integer numeroDeLinea){
+public LineasTexto (String contenido, Texto texto){
 	
-	this.numeroDeLinea = numeroDeLinea;
 	this.contenido = contenido;
+	this.parrafo = texto;
 }
 
 
