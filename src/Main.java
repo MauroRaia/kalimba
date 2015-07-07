@@ -6,7 +6,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 	
-	Editor kalimba = new Editor ("plugin1", "Kalimbo");	
+	Editor kalimba = new Editor ("Kalimbo");	
 	Hoja hoja3 = new Hoja (new Integer(1), kalimba);	
 	Texto textoHoja3 = new Texto (hoja3);
 	kalimba.elegirHojaActiva(hoja3);
@@ -26,6 +26,9 @@ public class Main {
 	kalimba.copiarContenido();
 	kalimba.pegarContenido(hoja3, 3);
     kalimba.imprimirHojaActiva();
+    kalimba.setPlugin(new PluginHojaActiva());
+    kalimba.exportar(kalimba);
+    System.out.print(kalimba.exportar(kalimba));
     }
 	
 	

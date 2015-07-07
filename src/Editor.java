@@ -4,15 +4,40 @@ import java.util.List;
 
 public class Editor {
 
-	String pluginCargado = "";
-	List<Hoja> listaDeHojas = new ArrayList<Hoja>();
-	String nombre = "";
-    Hoja hojaActiva ;
-    List<LineasTexto> contenidoPortapapeles = new ArrayList<LineasTexto>();
-
-public Editor (String plugin, String name){
+	private Plugin plugin;
 	
-	this.pluginCargado = plugin;
+	
+	public Plugin getPlugin() {
+		return plugin;
+	}
+
+	public void setPlugin(Plugin plugin) {
+		this.plugin = plugin;
+	}
+
+
+
+	private List<Hoja> listaDeHojas = new ArrayList<Hoja>();
+	
+	
+	String nombre = "";
+	
+    private Hoja hojaActiva;
+    
+    public Hoja getHojaActiva() {
+		return hojaActiva;
+	}
+
+	public void setHojaActiva(Hoja hojaActiva) {
+		this.hojaActiva = hojaActiva;
+	}
+
+
+
+	List<LineasTexto> contenidoPortapapeles = new ArrayList<LineasTexto>();
+
+public Editor (String name){
+	
 	this.nombre = name;
 	
      }
@@ -77,5 +102,20 @@ public void pegarContenido(Hoja hoja, Integer numeroLista){
 	//hoja.escrito.lineasString.addAll(this.contenidoPortapapeles);
 	
 }
+	
+public PDF exportar(Editor editor){
+	
+	return this.plugin.exportar(editor);
+}
+
+public List<Hoja> getListaDeHojas() {
+	return listaDeHojas;
+}
+
+public void setListaDeHojas(List<Hoja> listaDeHojas) {
+	this.listaDeHojas = listaDeHojas;
+}
+
 
 }
+
